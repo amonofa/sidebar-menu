@@ -18,7 +18,7 @@
 
 .side-navbar {
     position: fixed;
-    height: 100vh;
+    min-height: 100vh;
     width: 260px;
     background: #460044;
     overflow: hidden;
@@ -66,4 +66,65 @@
     height: 60px;
     line-height: 60px;
     white-space: nowrap;
+}
+
+.content {
+    position: absolute;
+    width: calc(100% - 260px);
+    left: 260px;
+    min-height: 100vh;
+    transition: 0.5s ease;
+}
+
+.top-navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 20px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+.profile img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+#menu-icon {
+    font-size: 34px;
+    cursor: pointer;
+}
+
+.content.active {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.side-navbar.active {
+    width: 60px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 100%;
+        left: 0;
+    }
+
+    .side-navbar {
+        width: 60px;
+        left: -60px;
+    }
+
+    .content.active {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .side-navbar.active {
+        left: 0;
+    }
 }
